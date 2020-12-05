@@ -28,7 +28,7 @@ app.get("/search", async function(req, res){
     for (let i = 0; i < data.length; i++){
         imageUrlArray.push(data[i].urls.small);
     }
-    res.render("results", {"imageUrl": data[0].urls.small, "imageUrlArray":imageUrlArray});
+    res.render("results", {"imageUrl": data[2].urls.small, "imageUrlArray":imageUrlArray});
 });
 
 //starting server
