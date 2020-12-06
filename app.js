@@ -3,6 +3,7 @@ const app = express();
 const fetch = require("node-fetch");
 
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 //routes
 app.get("/", async function(req, res){
@@ -28,7 +29,7 @@ app.get("/search", async function(req, res){
     for (let i = 0; i < data.length; i++){
         imageUrlArray.push(data[i].urls.small);
     }
-    res.render("results", {"imageUrl": data[2].urls.small, "imageUrlArray":imageUrlArray});
+    res.render("results", {"imageUrl": data[0].urls.small, "imageUrlArray":imageUrlArray});
 });
 
 //starting server
